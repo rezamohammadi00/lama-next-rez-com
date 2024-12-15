@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { LogOut } from "lucide-react";
 
 import LOGO from "@/public/images/logo.png";
 
@@ -20,14 +21,15 @@ const Topbar = () => {
 
   return (
     <>
-      <header className="min-h-[100px] flex items-center justify-between text-base font-normal lg-mb-0">
+      <header className="min-h-[100px] flex items-center justify-between text-base font-medium lg-mb-0">
         <Image
           src={LOGO}
           width={100}
           alt="logo"
           quality={100}
-          style={{ filter: "grayscale(100%)" }}
-          className="object-contain cursor-pointer"
+          className="object-contain cursor-pointer grayscale"
+          style={{filter:""}}
+          placeholder="blur"
         />
 
         {/* Desktop Links */}
@@ -42,8 +44,11 @@ const Topbar = () => {
             </Link>
           ))}
         </div>
-        <button className="bg-greenApp text-white lg:px-8 lg:py-2 rounded-full px-4 py-1 hidden lg:block">
-          خروج
+        <button className="bg-greenApp text-white lg:px-4 lg:py-2 rounded-full px-4 py-1 hidden lg:block">
+          <Link href={"/contact"} className="flex items-center gap-2">
+            <LogOut size={20} className="" />
+            خروج
+          </Link>
         </button>
 
         {/* Hamburger Icon */}
@@ -59,7 +64,7 @@ const Topbar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 w-full h-screen bg-greenApp z-40 transform transition-transform duration-300 bg-opacity-90 ${
+        className={`fixed top-0 right-0 w-full h-screen bg-white z-40 transform transition-transform duration-300 bg-opacity-90 ${
           isShowingSidebar ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -81,14 +86,14 @@ const Topbar = () => {
               href={link.href}
               key={link.href}
               className={`${
-                pathname === link.href ? "text-white" : "text-black"
+                pathname === link.href ? "text-greenApp" : "text-black"
               } text-lg`}
               onClick={() => setIsShowingSidebar(false)}
             >
               {link.label}
             </Link>
           ))}
-          <button className="bg-white text-greenApp px-8 py-2 rounded-full">
+          <button className="bg-greenApp text-white px-8 py-2 rounded-full">
             خروج
           </button>
         </div>

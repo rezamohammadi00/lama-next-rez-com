@@ -7,7 +7,7 @@ import facebook from "@/public/images/facebook.png";
 
 const Footer = () => {
   return (
-    <div className="h-[100px] text-sm flex justify-between items-center leading-snug">
+    <div className="h-[100px] text-sm flex justify-between items-center leading-snug mt-4 lg:mt-0">
       <p className="text-gray-500 w-2/4 lg:w-full">
         ©1403-رض.کلیه حقوق محفوظ است
         {/* <span className="text-red-500">REZ</span> */}

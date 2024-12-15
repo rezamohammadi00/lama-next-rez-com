@@ -8,8 +8,8 @@ import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "REZ | Home",
-    template: "%s | REZ",
+    default: "رض | خانه",
+    template: "%s | رض",
   },
   description: "شرکت صنعت فناوری REZ",
 };
@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${IRANSansFont.className} font-normal antialiased`}>
+      <body
+        className={`${IRANSansFont.className} font-normal antialiased px-4 lg:px-14`}
+      >
         <Topbar />
         {children}
         <Footer />

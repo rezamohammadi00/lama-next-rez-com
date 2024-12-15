@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Send } from "lucide-react";
 
 import hero from "@/public/images/hero.png";
 import Link from "next/link";
@@ -20,18 +21,21 @@ const HomePage = () => {
           تبدیل ایده شما به واقعیت. ما تیمی از صنعت فناوری جهان را گرد هم
           آورده‌ایم.
         </p>
-        <button className="bg-greenApp text-white lg:px-8 lg:py-2 rounded-full px-4 py-1 mt-5 self-center lg:self-start lg:mt-8">
-          <Link href={"/contact"}>تماس با ما</Link>
+        <button className="bg-greenApp text-white lg:px-4 lg:py-2 rounded-full px-4 py-1 mt-5 self-center lg:self-start lg:mt-8 font-normal">
+          <Link href={"/contact"} className="flex items-center gap-2">
+            <Send size={20} />
+            تماس با ما
+          </Link>
         </button>
       </div>
 
       {/* Image Section */}
-      <div className="lg:flex-1 h-1/2 lg:h-[500px] relative w-full">
+      <div className="lg:flex-1 h-1/2 lg:h-full relative w-full">
         <Image
           src={hero}
           alt="hero"
           fill
-          className="object-contain"
+          className="object-contain heroImage"
           quality={100}
           placeholder="blur"
         />

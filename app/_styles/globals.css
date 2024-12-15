@@ -11,8 +11,11 @@ body {
   max-width: 1366px;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 0 60px;
+  /* padding: 0 60px; */
+  /* padding: 0 16px; */
 }
+
+/* ----------------------------------------------------------------- */
 
 .heroTitle {
   background: linear-gradient(to bottom, #194c33, #bbb);
@@ -20,3 +23,34 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ----------------------------------------------------------------- */
+
+.contactImage {
+  animation: contactImageMove 3s infinite ease alternate;
+}
+@keyframes contactImageMove {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0px) scale(1.03);
+  }
+}
+
+/* ----------------------------------------------------------------- */
+
+.heroImage {
+  animation: heroImageMove 3s infinite ease alternate;
+}
+
+@keyframes heroImageMove {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* ----------------------------------------------------------------- */

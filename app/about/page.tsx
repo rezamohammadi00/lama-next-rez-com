@@ -1,11 +1,11 @@
+import { Send } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "درباره‌ما",
 };
-
 
 const page = () => {
   return (
@@ -16,8 +16,9 @@ const page = () => {
           alt="Example Image"
           fill
           quality={100}
-          className="object-cover"
-          style={{ filter: "grayscale(100%)" }}
+          className="object-cover grayscale-0 sm:grayscale"
+          placeholder="blur"
+          blurDataURL="/images/about.jpeg"
         />
       </div>
       <div className="lg:flex lg:justify-between  mb-8 lg:mb-0">
@@ -40,8 +41,11 @@ const page = () => {
             روان، کاربران شما به راحتی با محصولات شما ارتباط برقرار کرده و از
             استفاده از آنها لذت خواهند برد.
           </p>
-          <button className="bg-greenApp text-white lg:px-8 lg:py-2 rounded-full px-4 py-1 mt-2 self-center lg:self-start lg:mt-4">
-            تماس با ما
+          <button className="bg-greenApp text-white lg:px-4 lg:py-2 rounded-full px-4 py-1 mt-5 self-center lg:self-start lg:mt-8">
+            <Link href={"/contact"} className="flex items-center gap-2">
+              <Send size={20} />
+              تماس با ما
+            </Link>
           </button>
         </div>
       </div>

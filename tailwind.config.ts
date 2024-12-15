@@ -9,8 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        greenApp: "#53c28b",
+      },
+      fontFamily: {
+        IRANSansFont: [`var(--font-iransans)`, "ui-sans-serif", "system-ui"],
       },
     },
   },
